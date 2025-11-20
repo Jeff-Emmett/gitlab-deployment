@@ -1,0 +1,20 @@
+# Environment variables
+.env
+
+# Backup files
+*.backup
+*.bak
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

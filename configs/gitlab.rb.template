@@ -1,0 +1,30 @@
+## GitLab Configuration Template
+## Copy to /etc/gitlab/gitlab.rb and customize
+
+external_url 'https://gitlab.yourdomain.com'
+
+## Email Settings (Configured via scripts/configure_email.sh)
+# See scripts for automatic configuration
+
+## Backup Configuration
+gitlab_rails['backup_keep_time'] = 604800  # 7 days in seconds
+gitlab_rails['backup_path'] = "/var/opt/gitlab/backups"
+
+## Performance Tuning (for 4GB RAM)
+postgresql['shared_buffers'] = "256MB"
+postgresql['max_worker_processes'] = 8
+sidekiq['max_concurrency'] = 10
+
+## Monitoring
+prometheus_monitoring['enable'] = true
+
+## Git LFS
+gitlab_rails['lfs_enabled'] = true
+
+## Container Registry (Optional)
+# registry_external_url 'https://registry.yourdomain.com'
+# gitlab_rails['registry_enabled'] = true
+
+## Pages (Optional - for hosting static sites)
+# pages_external_url 'https://pages.yourdomain.com'
+# gitlab_pages['enable'] = true
